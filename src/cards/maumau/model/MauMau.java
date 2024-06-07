@@ -29,6 +29,34 @@ public class MauMau {
     }
 
     /**
+     * Joins the elements of the list into a single string with the specified prefix and delimiter.
+     *
+     * @param list      The list to join.
+     * @param func      Function to convert list elements to strings.
+     * @param prefix    Prefix for the resulting string.
+     * @param delimiter Delimiter to separate list elements.
+     * @param suffix    Suffix for the resulting string.
+     * @param <A>       Type of elements in the list.
+     * @return Joined string representation of the list.
+     */
+    static <A> String mkString(List<A> list, Function<? super A, String> func, String prefix, String delimiter, String suffix) {
+        return list.stream().map(func).collect(Collectors.joining(delimiter, prefix, suffix));
+    }
+
+    /**
+     * Joins the elements of the list into a single string with the specified prefix and delimiter.
+     *
+     * @param list      The list to join.
+     * @param prefix    Prefix for the resulting string.
+     * @param delimiter Delimiter to separate list elements.
+     * @param <A>       Type of elements in the list.
+     * @return Joined string representation of the list.
+     */
+    static <A> String mkString(List<A> list, String prefix, String delimiter) {
+        return mkString(list, Objects::toString, prefix, delimiter, "\n");
+    }
+
+    /**
      * Adds an observer to the game.
      *
      * @param observer The observer to add.
@@ -125,36 +153,6 @@ public class MauMau {
         sb.append("chosen suit: ").append(getChosenSuit()).append("\n");
         sb.append("7 count: ").append(get7Counter()).append("\n");
         return sb.toString();
-    }
-
-    /**
-     * Joins the elements of the list into a single string with the specified prefix and delimiter.
-     *
-     * @param list      The list to join.
-     * @param func      Function to convert list elements to strings.
-     * @param prefix    Prefix for the resulting string.
-     * @param delimiter Delimiter to separate list elements.
-     * @param suffix    Suffix for the resulting string.
-     * @param <A>       Type of elements in the list.
-     * @return Joined string representation of the list.
-     */
-    static <A> String mkString(List<A> list, Function<? super A, String> func, String prefix, String delimiter, String suffix) {
-        return list.stream()
-                   .map(func)
-                   .collect(Collectors.joining(delimiter, prefix, suffix));
-    }
-
-    /**
-     * Joins the elements of the list into a single string with the specified prefix and delimiter.
-     *
-     * @param list      The list to join.
-     * @param prefix    Prefix for the resulting string.
-     * @param delimiter Delimiter to separate list elements.
-     * @param <A>       Type of elements in the list.
-     * @return Joined string representation of the list.
-     */
-    static <A> String mkString(List<A> list, String prefix, String delimiter) {
-        return mkString(list, Objects::toString, prefix, delimiter, "\n");
     }
 
     /**

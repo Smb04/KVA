@@ -44,7 +44,6 @@ public class MauMauGame {
         game.addPlayer("Jacqueline");
         game.addPlayer("Chantal");
         start(game);
-
     }
 
     /**

@@ -11,6 +11,7 @@ class PlayerHandler {
     private final MauMau game;
     private final List<Player> players = new LinkedList<>();
     private final List<Player> ranking = new ArrayList<>();
+    private State state = new WaitForNextTurn(this);
     private Player remember;
 
     /**
@@ -28,7 +29,7 @@ class PlayerHandler {
      * @param n The number of turns to proceed.
      */
     void nextTurn(int n) {
-        this.localNextTurn(n);
+        state.nextTurn(n);
     }
 
     /**
@@ -37,7 +38,10 @@ class PlayerHandler {
      * @param p The player calling "Mau".
      */
     void mau(Player p) {
-        setRemember(p);
+        //setRemember(p);
+        if (p == remember && currentState == WaitForMau) {
+            setState(WaitForNextTurn);
+        }
     }
 
     /**
@@ -116,4 +120,9 @@ class PlayerHandler {
     Player getCurrentPlayer() {
         return players.isEmpty() ? null : players.getFirst();
     }
+
+    void setState(State s) {state = s;}
+
+    public void
 }
+
