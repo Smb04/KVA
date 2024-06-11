@@ -1,15 +1,15 @@
 package cards.maumau.model;
 
-class WaitForNextTurn extends State {
+public class WaitForNextTurn extends State {
     private PlayerHandler pH;
 
-    WaitForNextTurn(PlayerHandler pH) {
+    public WaitForNextTurn(PlayerHandler pH) {
         super(pH);
         this.pH = pH;
     }
 
     @Override
-    void nextTurn(int n) {
+    public void nextTurn(int n) {
         if (pH.getCurrentPlayer().getCards().size() == 1) {
             pH.setRemember(pH.getCurrentPlayer());
             localNextTurn(n);
@@ -24,14 +24,14 @@ class WaitForNextTurn extends State {
     }
 
     @Override
-    void mau(Player p) {
+    public void mau(Player p) {
         if (p == pH.getRemember()) {
             pH.setState(new WaitForNextTurn(pH));
         }
     }
 
     @Override
-    void maumau(Player p) {
+    public void maumau(Player p) {
 
     }
 

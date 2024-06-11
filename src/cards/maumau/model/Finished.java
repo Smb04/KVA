@@ -9,17 +9,17 @@ class Finished extends State {
     }
 
     @Override
-    void mau(Player p) {
+    public void mau(Player p) {
 
     }
 
     @Override
-    void nextTurn(int n) {
+    public void nextTurn(int n) {
 
     }
 
     @Override
-    void maumau(Player p) {
+    public void maumau(Player p) {
 
     }
 

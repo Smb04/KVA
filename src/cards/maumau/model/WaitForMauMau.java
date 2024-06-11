@@ -9,17 +9,17 @@ class WaitForMauMau extends State {
     }
 
     @Override
-    void mau(Player p) {
+    public void mau(Player p) {
 
     }
 
     @Override
-    void nextTurn(int n) {
+    public void nextTurn(int n) {
         pH.getRemember().drawCards(1);
     }
 
     @Override
-    void maumau(Player p) {
+    public void maumau(Player p) {
         if (p == pH.getRemember()) {
             finishPlayer(p);
         }
