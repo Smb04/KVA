@@ -28,14 +28,14 @@ public class MauMauDeck {
         //TODO implement
         List<Card> deck = new ArrayList<Card>();
         for (int i = 0; i != numDecks; i++) {
-            for (Rank rank : EnumSet.range(Rank.SEVEN, Rank.ACE)){
+            for (Rank rank : EnumSet.range(Rank.SEVEN, Rank.ACE)) {
                 for (Suit suit : Suit.values()) {
                     Card newCard = new Card(rank, suit);
                     deck.add(newCard);
                 }
+            }
         }
-    }
         Collections.shuffle(deck);
         return deck;
-}
+    }
 }

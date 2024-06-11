@@ -3,9 +3,6 @@ package cards.maumau.model;
 import cards.Card;
 import cards.Suit;
 
-/**
- * Manages the actions and state transitions within a MauMau game.
- */
 class ActionHandler {
     private final MauMau game;
     private Suit chosenSuit;
@@ -27,6 +24,20 @@ class ActionHandler {
      */
     void addPlayer(Player player) {
         game.getPlayerHandler().addPlayer(player);
+    }
+
+    /**
+     * Manages the actions and state transitions within a MauMau game.
+     * <p>
+     * Checks if a card can be played by the current player in the current state.
+     *
+     * @param c The card being played.
+     * @return True if the card can be played, false otherwise.
+     * <p>
+     **/
+    boolean canPlay(Card c) {
+        //TODO implement
+        return false;
     }
 
     /**
@@ -136,18 +147,18 @@ class ActionHandler {
      * Returns the current state of the game.
      */
     GameState getGameState() {
-        //TODO implement
-        return null;
-    }
+        return switch (game.getGameState()) {
+            case GAME_INITIALIZED -> GameState.GAME_INITIALIZED;
 
-    /**
-     * Checks if a card can be played by the current player in the current state.
-     *
-     * @param c The card being played.
-     * @return True if the card can be played, false otherwise.
-     */
-    boolean canPlay(Card c) {
-        //TODO implement
-        return false;
+            case GAME_OVER -> GameState.GAME_OVER;
+
+            case GAME_CANCELED -> GameState.GAME_CANCELED;
+
+            case PLAY -> GameState.PLAY;
+
+            case CHOOSE_SUIT -> GameState.CHOOSE_SUIT;
+        }
+
+                ;
     }
 }

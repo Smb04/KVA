@@ -4,13 +4,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Handles players in a MauMau game.
- */
 class PlayerHandler {
     private final MauMau game;
     private final List<Player> players = new LinkedList<>();
     private final List<Player> ranking = new ArrayList<>();
+    private State state = new WaitForNextTurn(this);
     private Player remember;
 
     /**
@@ -20,33 +18,6 @@ class PlayerHandler {
      */
     PlayerHandler(MauMau game) {
         this.game = game;
-    }
-
-    /**
-     * Initiates the next turn in the game.
-     *
-     * @param n The number of turns to proceed.
-     */
-    void nextTurn(int n) {
-        this.localNextTurn(n);
-    }
-
-    /**
-     * Handles a player calling "Mau".
-     *
-     * @param p The player calling "Mau".
-     */
-    void mau(Player p) {
-        setRemember(p);
-    }
-
-    /**
-     * Handles a player calling "Mau-Mau".
-     *
-     * @param p The player calling "Mau-Mau".
-     */
-    void maumau(Player p) {
-        //TODO implement
     }
 
     /**
@@ -116,4 +87,38 @@ class PlayerHandler {
     Player getCurrentPlayer() {
         return players.isEmpty() ? null : players.getFirst();
     }
+
+    void setState(State s) {state = s;}
+
+    /**
+     * Initiates the next turn in the game.
+     *
+     * @param n The number of turns to proceed.
+     */
+    void nextTurn(int n) {
+        state.nextTurn(n);
+    }
+    /*
+        Handles players in a MauMau game.
+    */
+
+    /**
+     * Handles a player calling "Mau".
+     *
+     * @param p The player calling "Mau".
+     */
+    void mau(Player p) {
+        state.mau(p);
+    }
+
+    /**
+     * Handles a player calling "Mau-Mau".
+     *
+     * @param p The player calling "Mau-Mau".
+     */
+
+    void maumau(Player p) {
+        state.maumau(p);
+    }
 }
+
