@@ -25,7 +25,9 @@ class WaitForNextTurn extends State {
 
     @Override
     void mau(Player p) {
-
+        if (p == pH.getRemember()) {
+            pH.setState(new WaitForNextTurn(pH));
+        }
     }
 
     @Override

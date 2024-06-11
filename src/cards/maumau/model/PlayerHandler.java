@@ -23,6 +23,7 @@ class PlayerHandler {
 /*
   Handles players in a MauMau game.
  */
+
     /**
      * Handles a player calling "Mau-Mau".
      *
@@ -118,9 +119,9 @@ class PlayerHandler {
      * @param p The player calling "Mau".
      */
     void mau(Player p) {
-        if (p == remember) {//&& this.state == WaitForMau) {
-            setState(WaitForNextTurn);
-        }
+            state.mau(p);
+        //
+
     }
 }
 
