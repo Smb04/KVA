@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Handles players in a MauMau game.
- */
 class PlayerHandler {
     private final MauMau game;
     private final List<Player> players = new LinkedList<>();
@@ -22,33 +19,15 @@ class PlayerHandler {
     PlayerHandler(MauMau game) {
         this.game = game;
     }
-
-    /**
-     * Initiates the next turn in the game.
-     *
-     * @param n The number of turns to proceed.
-     */
-    void nextTurn(int n) {
-        state.nextTurn(n);
-    }
-
-    /**
-     * Handles a player calling "Mau".
-     *
-     * @param p The player calling "Mau".
-     */
-    void mau(Player p) {
-        //setRemember(p);
-        if (p == remember && currentState == WaitForMau) {
-            setState(WaitForNextTurn);
-        }
-    }
-
+/**
+ * Handles players in a MauMau game.
+ */
     /**
      * Handles a player calling "Mau-Mau".
      *
      * @param p The player calling "Mau-Mau".
      */
+
     void maumau(Player p) {
         //TODO implement
     }
@@ -123,6 +102,24 @@ class PlayerHandler {
 
     void setState(State s) {state = s;}
 
-    public void
+    /**
+     * Initiates the next turn in the game.
+     *
+     * @param n The number of turns to proceed.
+     */
+    void nextTurn(int n) {
+        state.nextTurn(n);
+    }
+
+    /**
+     * Handles a player calling "Mau".
+     *
+     * @param p The player calling "Mau".
+     */
+    void mau(Player p) {
+        if (p == remember) {//&& this.state == WaitForMau) {
+            this.setState(WaitForNextTurn);
+        }
+    }
 }
 
