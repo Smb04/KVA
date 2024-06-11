@@ -19,8 +19,9 @@ class PlayerHandler {
     PlayerHandler(MauMau game) {
         this.game = game;
     }
-/**
- * Handles players in a MauMau game.
+
+/*
+  Handles players in a MauMau game.
  */
     /**
      * Handles a player calling "Mau-Mau".
@@ -118,7 +119,7 @@ class PlayerHandler {
      */
     void mau(Player p) {
         if (p == remember) {//&& this.state == WaitForMau) {
-            this.setState(WaitForNextTurn);
+            setState(WaitForNextTurn);
         }
     }
 }

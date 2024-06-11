@@ -9,11 +9,6 @@ class WaitForNextTurn extends State {
     }
 
     @Override
-    void mau(Player p) {
-
-    }
-
-    @Override
     void nextTurn(int n) {
         if (pH.getCurrentPlayer().getCards().size() == 1) {
             pH.setRemember(pH.getCurrentPlayer());
@@ -26,6 +21,11 @@ class WaitForNextTurn extends State {
         else {
             localNextTurn(n);
         }
+    }
+
+    @Override
+    void mau(Player p) {
+
     }
 
     @Override
