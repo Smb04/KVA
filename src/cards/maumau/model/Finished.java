@@ -6,7 +6,6 @@ class Finished extends State {
     Finished(PlayerHandler pH) {
         super(pH);
         this.pH = pH;
-        String s = "TEST";
     }
 
     @Override
