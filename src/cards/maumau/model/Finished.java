@@ -1,8 +1,11 @@
 package cards.maumau.model;
 
 class Finished extends State {
+    private PlayerHandler pH;
+
     Finished(PlayerHandler pH) {
         super(pH);
+        this.pH = pH;
     }
 
     @Override

@@ -119,9 +119,7 @@ class PlayerHandler {
      * @param p The player calling "Mau".
      */
     void mau(Player p) {
-            state.mau(p);
-        //
-
+        state.mau(p);
     }
 }
 

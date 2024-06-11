@@ -1,8 +1,11 @@
 package cards.maumau.model;
 
 class WaitForMau extends State {
+    private PlayerHandler pH;
+
     WaitForMau(PlayerHandler pH) {
         super(pH);
+        this.pH = pH;
     }
 
     @Override
@@ -12,7 +15,7 @@ class WaitForMau extends State {
 
     @Override
     void nextTurn(int n) {
-
+        pH.getRemember().drawCards(1);
     }
 
     @Override
