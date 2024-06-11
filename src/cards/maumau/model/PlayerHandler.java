@@ -20,20 +20,6 @@ class PlayerHandler {
         this.game = game;
     }
 
-/*
-  Handles players in a MauMau game.
- */
-
-    /**
-     * Handles a player calling "Mau-Mau".
-     *
-     * @param p The player calling "Mau-Mau".
-     */
-
-    void maumau(Player p) {
-        //TODO implement
-    }
-
     /**
      * Returns the list of players participating in the game.
      *
@@ -112,6 +98,9 @@ class PlayerHandler {
     void nextTurn(int n) {
         state.nextTurn(n);
     }
+    /*
+        Handles players in a MauMau game.
+    */
 
     /**
      * Handles a player calling "Mau".
@@ -120,6 +109,16 @@ class PlayerHandler {
      */
     void mau(Player p) {
         state.mau(p);
+    }
+
+    /**
+     * Handles a player calling "Mau-Mau".
+     *
+     * @param p The player calling "Mau-Mau".
+     */
+
+    void maumau(Player p) {
+        state.maumau(p);
     }
 }
 
