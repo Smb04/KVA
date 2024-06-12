@@ -1,15 +1,14 @@
 package cards.maumau.model;
 
-import cards.Suit;
 import cards.Card;
+import cards.Suit;
 
-class Initialized extends AhState {
+public class GamePlayed extends AhState {
     private ActionHandler aH;
 
-    Initialized(ActionHandler aH) {
+    GamePlayed(ActionHandler aH) {
         super(aH);
         this.aH = aH;
-
     }
 
     @Override
@@ -18,7 +17,7 @@ class Initialized extends AhState {
     }
 
     @Override
-    void chooseSuit(Suit suit) {
+    void chooseSuit(Suit s) {
 
     }
 
@@ -34,7 +33,7 @@ class Initialized extends AhState {
 
     @Override
     void startGame() {
-        aH.getGame().getCardHandler().dealCards();
+
     }
 
     @Override
@@ -49,6 +48,6 @@ class Initialized extends AhState {
 
     @Override
     void addPlayer(Player p) {
-        aH.getGame().getPlayerHandler().addPlayer(p);
+
     }
 }

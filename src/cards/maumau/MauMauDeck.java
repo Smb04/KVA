@@ -25,7 +25,6 @@ public class MauMauDeck {
      * @return A list containing the generated deck of cards.
      */
     public static List<Card> makeDeck(int numDecks) {
-        //TODO implement
         List<Card> deck = new ArrayList<Card>();
         for (int i = 0; i != numDecks; i++) {
             for (Rank rank : EnumSet.range(Rank.SEVEN, Rank.ACE)) {

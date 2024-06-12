@@ -40,15 +40,23 @@ class ActionHandler {
      * <p>
      **/
     boolean canPlay(Card c) {
-        //TODO implement
-        return false;
+        if (state instanceof Initialized) {
+            return false;
+        }
+        else if (state instanceof Normal) {
+            return true;
+        }
+        else if (state instanceof SevenChosen) return true;
+        else if (state instanceof JackChosen) {return false;}
+        else if (state instanceof SuitChosen) return true;
+        else return false;
     }
 
     /**
      * Starts the game.
      */
     void startGame() {
-        //TODO implement
+        state.startGame();
     }
 
     /**
@@ -145,25 +153,6 @@ class ActionHandler {
      */
     void increment7Counter() {
         ctr7++;
-    }
-
-    /**
-     * Returns the current state of the game.
-     */
-    GameState getGameState() {
-        return switch (game.getGameState()) {
-            case GAME_INITIALIZED -> GameState.GAME_INITIALIZED;
-
-            case GAME_OVER -> GameState.GAME_OVER;
-
-            case GAME_CANCELED -> GameState.GAME_CANCELED;
-
-            case PLAY -> GameState.PLAY;
-
-            case CHOOSE_SUIT -> GameState.CHOOSE_SUIT;
-        }
-
-                ;
     }
 
     AhState getState() {return state;}

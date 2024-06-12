@@ -220,6 +220,16 @@ public class MauMau {
      * @return The state of the game.
      */
     public GameState getGameState() {
-        return actionHandler.getGameState();
+
+        if (actionHandler.getState() instanceof GamePlayed) {
+            return GameState.PLAY;
+        } else if (actionHandler.getState() instanceof GameCanceled) {return GameState.GAME_CANCELED;}
+        else if (actionHandler.getState() instanceof GameFinished) {return GameState.GAME_OVER;}
+        else if (actionHandler.getState() instanceof SuitChosen) {return GameState.CHOOSE_SUIT;}
+        else if (actionHandler.getState() instanceof Initialized) {return GameState.GAME_INITIALIZED;}
+        return null;
+
     }
+
 }
+

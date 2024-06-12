@@ -18,7 +18,9 @@ class JackChosen extends AhState {
 
     @Override
     void chooseSuit(Suit s) {
-
+        aH.setChosenSuit(s);
+        aH.getGame().getPlayerHandler().nextTurn(1);
+        aH.setState(new SuitChosen(aH));
     }
 
     @Override

@@ -28,10 +28,22 @@ class Normal extends AhState {
         if (aH.getState() instanceof Normal) {
             aH.getGame().getCurrentPlayer().playCard(c);
             if (aH.canPlay(c)) {
+                aH.getGame().getPlayerHandler().getCurrentPlayer().playCard(c);
                 if (c.rank() == Rank.JACK) {
                     aH.setState(new JackChosen(aH));
                 }
+                else if (c.rank() == Rank.SEVEN) {
+                    aH.increment7Counter();
+                    aH.getGame().getPlayerHandler().nextTurn(1);
+                    aH.setState(new SevenChosen(aH));
+                }
+                else if (c.rank() == Rank.EIGHT) {
+                    aH.getGame().getPlayerHandler().nextTurn(2);
+                    aH.setState(new Normal(aH));
+                }
+                else aH.getGame().getPlayerHandler().nextTurn(1);
             }
+            else aH.setState(new Normal(aH));
         }
     }
 

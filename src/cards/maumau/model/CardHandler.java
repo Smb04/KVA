@@ -56,33 +56,16 @@ class CardHandler {
         game.getActionHandler().cancelGame();
         return null;
     }
-/**
- * Manages the draw pile and discard pile in a MauMau game.
- * <p>
- * Discards a card onto the discard pile.
- *
- * @param c The card to discard.
- *          <p>
- *          Discards a card onto the discard pile.
- * @param c The card to discard.
- */
+
     /**
+     * Manages the draw pile and discard pile in a MauMau game.
+     * <p>
      * Discards a card onto the discard pile.
      *
      * @param c The card to discard.
      */
-
     void discard(Card c) {
         discardPile.addFirst(c);
-    }
-
-    /**
-     * Returns the top card of the discard pile.
-     *
-     * @return The top card of the discard pile.
-     */
-    Card top() {
-        return this.game.getDiscardPile().getFirst();
     }
 
     private void reuseDiscardedCards() {
@@ -96,7 +79,6 @@ class CardHandler {
 
     /**
      * Deals cards to all players.
-     *
      **/
 
     void dealCards() {
@@ -106,6 +88,15 @@ class CardHandler {
             }
         }
         discardPile.add(drawCard());
+    }
+
+    /**
+     * Returns the top card of the discard pile.
+     *
+     * @return The top card of the discard pile.
+     */
+    Card top() {
+        return this.game.getDiscardPile().getFirst();
     }
 }
 

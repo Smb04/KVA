@@ -43,7 +43,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[]", jacqueline.getCards().toString());
         assertEquals("[]", chantal.getCards().toString());
-        assertEquals("[J♦︎, 7♣︎, Q♦︎, 9♣︎, A♠︎, 9♠︎, A♦︎, 8♣︎, 8♦︎, K♥︎, A♥︎, 7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[J♦, 7♣, Q♦, 9♣, A♠, 9♠, A♦, 8♣, 8♦, K♥, A♥, 7♠, K♣, K♠, Q♠, 7♦, 10♦, 8♥, K♦, Q♣, J♥, 8♠, 10♣, A♣, J♣, Q♥, 7♥, J♠, 9♦, 9♥, 10♥, 10♠]", game.getDrawPile().toString());
         assertEquals("[]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -52,10 +52,10 @@ public class MauMau1Test {
         assertEquals(PLAY, game.getGameState());
         assertEquals(List.of(jacqueline, chantal), game.getPlayers());
         assertEquals(List.of(), game.getRanking());
-        assertEquals("[J♦︎, Q♦︎, A♠︎, A♦︎, 8♦︎]", jacqueline.getCards().toString());
-        assertEquals("[7♣︎, 9♣︎, 9♠︎, 8♣︎, K♥︎]", chantal.getCards().toString());
-        assertEquals("[7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
-        assertEquals("[A♥︎]", game.getDiscardPile().toString());
+        assertEquals("[J♦, Q♦, A♠, A♦, 8♦]", jacqueline.getCards().toString());
+        assertEquals("[7♣, 9♣, 9♠, 8♣, K♥]", chantal.getCards().toString());
+        assertEquals("[7♠, K♣, K♠, Q♠, 7♦, 10♦, 8♥, K♦, Q♣, J♥, 8♠, 10♣, A♣, J♣, Q♥, 7♥, J♠, 9♦, 9♥, 10♥, 10♠]", game.getDrawPile().toString());
+        assertEquals("[A♥]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
 
@@ -65,7 +65,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[7♣︎, 9♣︎, 9♠︎, 8♣︎, K♥︎]", chantal.getCards().toString());
         assertEquals("[J♦︎, Q♦︎, A♦︎, 8♦︎]", jacqueline.getCards().toString());
-        assertEquals("[7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -76,7 +76,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[J♦︎, Q♦︎, A♦︎, 8♦︎]", jacqueline.getCards().toString());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎]", chantal.getCards().toString());
-        assertEquals("[7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -87,7 +87,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[Q♦︎, A♦︎, 8♦︎]", jacqueline.getCards().toString());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎]", chantal.getCards().toString());
-        assertEquals("[7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[7♠︎, K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -109,7 +109,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[Q♦︎, A♦︎, 8♦︎]", jacqueline.getCards().toString());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎, 7♠︎]", chantal.getCards().toString());
-        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertEquals(DIAMONDS, game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -120,7 +120,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[Q♦︎, A♦︎]", jacqueline.getCards().toString());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎, 7♠︎]", chantal.getCards().toString());
-        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[8♦︎, J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -131,7 +131,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎, 7♠︎]", chantal.getCards().toString());
         assertEquals("[A♦︎]", jacqueline.getCards().toString());
-        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[Q♦︎, 8♦︎, J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -142,7 +142,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎, 7♠︎]", chantal.getCards().toString());
         assertEquals("[A♦︎]", jacqueline.getCards().toString());
-        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[K♣︎, K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[Q♦︎, 8♦︎, J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -153,7 +153,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[A♦︎]", jacqueline.getCards().toString());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎, 7♠︎, K♣︎]", chantal.getCards().toString());
-        assertEquals("[K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[Q♦︎, 8♦︎, J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -164,7 +164,7 @@ public class MauMau1Test {
         assertEquals(List.of(), game.getRanking());
         assertEquals("[7♣︎, 9♣︎, 8♣︎, K♥︎, 7♠︎, K♣︎]", chantal.getCards().toString());
         assertEquals("[]", jacqueline.getCards().toString());
-        assertEquals("[K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[A♦︎, Q♦︎, 8♦︎, J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());
@@ -173,7 +173,7 @@ public class MauMau1Test {
         assertEquals(GAME_OVER, game.getGameState());
         assertEquals(List.of(), game.getPlayers());
         assertEquals(List.of(jacqueline, chantal), game.getRanking());
-        assertEquals("[K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString());
+        assertEquals("[K♠︎, Q♠︎, 7♦︎, 10♦︎, 8♥︎, K♦︎, Q♣︎, J♥︎, 8♠︎, 10♣︎, A♣︎, J♣︎, Q♥︎, 7♥︎, J♠︎, 9♦︎, 9♥︎, 10♥︎, 10♠︎]", game.getDrawPile().toString().stripTrailing());
         assertEquals("[A♦︎, Q♦︎, 8♦︎, J♦︎, 9♠︎, A♠︎, A♥︎]", game.getDiscardPile().toString());
         assertNull(game.getChosenSuit());
         assertEquals(0, game.get7Counter());

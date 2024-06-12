@@ -11,9 +11,9 @@ import static org.junit.Assert.assertEquals;
 public class SuitTest {
     @Test
     public void toStringTest() {
-        assertEquals("♥︎", HEARTS.toString());
-        assertEquals("♦︎", DIAMONDS.toString());
-        assertEquals("♣︎", CLUBS.toString());
-        assertEquals("♠︎", SPADES.toString());
+        assertEquals("♥", HEARTS.toString().stripTrailing());
+        assertEquals("♦", DIAMONDS.toString().stripTrailing());
+        assertEquals("♣", CLUBS.toString().stripTrailing());
+        assertEquals("♠", SPADES.toString().stripTrailing());
     }
 }
