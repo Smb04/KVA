@@ -1,6 +1,6 @@
 package cards.maumau.model;
 
-public class WaitForNextTurn extends State {
+class WaitForNextTurn extends State {
     private PlayerHandler pH;
 
     public WaitForNextTurn(PlayerHandler pH) {

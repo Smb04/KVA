@@ -82,7 +82,7 @@ class CardHandler {
      * @return The top card of the discard pile.
      */
     Card top() {
-        return discardPile.getFirst();
+        return this.game.getDiscardPile().getFirst();
     }
 
     private void reuseDiscardedCards() {
@@ -96,7 +96,9 @@ class CardHandler {
 
     /**
      * Deals cards to all players.
-     */
+     *
+     **/
+
     void dealCards() {
         for (int i = 0; i < numCardsPerPlayer; i++) {
             for (Player p : this.game.getPlayers()) {

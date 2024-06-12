@@ -1,4 +1,53 @@
 package cards.maumau.model;
 
-public class JackChosen {
+import cards.Card;
+import cards.Suit;
+
+class JackChosen extends AhState {
+    private ActionHandler aH;
+
+    JackChosen(ActionHandler aH) {
+        super(aH);
+        this.aH = aH;
+    }
+
+    @Override
+    void skip() {
+
+    }
+
+    @Override
+    void chooseSuit(Suit s) {
+
+    }
+
+    @Override
+    void chooseCard(Card c) {
+
+    }
+
+    @Override
+    void no7() {
+
+    }
+
+    @Override
+    void startGame() {
+
+    }
+
+    @Override
+    void cancelGame() {
+
+    }
+
+    @Override
+    void finishGame() {
+
+    }
+
+    @Override
+    void addPlayer(Player p) {
+
+    }
 }

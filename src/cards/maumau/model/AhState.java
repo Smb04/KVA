@@ -1,5 +1,8 @@
 package cards.maumau.model;
 
+import cards.Card;
+import cards.Suit;
+
 abstract class AhState {
     final ActionHandler aH;
 
@@ -9,7 +12,7 @@ abstract class AhState {
 
     abstract void skip();
 
-    abstract void chooseSuit(s);
+    abstract void chooseSuit(Suit s);
 
     abstract void chooseCard(Card c);
 

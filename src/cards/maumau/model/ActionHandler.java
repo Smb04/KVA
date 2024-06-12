@@ -5,6 +5,7 @@ import cards.Suit;
 
 class ActionHandler {
     private final MauMau game;
+    private AhState state;
     private Suit chosenSuit;
     private int ctr7 = 0;
 
@@ -15,6 +16,7 @@ class ActionHandler {
      */
     ActionHandler(MauMau game) {
         this.game = game;
+        state = new Initialized(this);
     }
 
     /**
@@ -23,7 +25,9 @@ class ActionHandler {
      * @param player The player to be added to the game.
      */
     void addPlayer(Player player) {
-        game.getPlayerHandler().addPlayer(player);
+        if (state instanceof Initialized) {
+            state.addPlayer(player);
+        }
     }
 
     /**
@@ -51,14 +55,14 @@ class ActionHandler {
      * Transitions the game state to GAME_OVER.
      */
     void finishGame() {
-        //TODO implement
+        state.finishGame();
     }
 
     /**
      * Transitions the game state to GAME_CANCELED.
      */
     void cancelGame() {
-        //TODO implement
+        state.cancelGame();
     }
 
     /**
@@ -67,7 +71,7 @@ class ActionHandler {
      * @param c The card chosen by the player.
      */
     void chooseCard(Card c) {
-        //TODO implement
+        state.chooseCard(c);
     }
 
     /**
@@ -76,21 +80,21 @@ class ActionHandler {
      * @param suit The suit chosen by the player.
      */
     void chooseSuit(Suit suit) {
-        //TODO implement
+        state.chooseSuit(suit);
     }
 
     /**
      * Lets the player skip a round.
      **/
     void skip() {
-        //TODO implement
+        state.skip();
     }
 
     /**
      * Handles the player saying "no 7" in the current state.
      */
     void no7() {
-        //TODO implement
+        state.no7();
     }
 
     /**
@@ -161,4 +165,8 @@ class ActionHandler {
 
                 ;
     }
+
+    AhState getState() {return state;}
+
+    void setState(AhState s) {state = s;}
 }
